@@ -21,12 +21,12 @@ def canUnlockAll(boxes):
                     break
                 else:
                     ind_1 = ind_1 + 1
-            if res == True:
+            if res is True:
                 break
             else:
                 j = j + 1
                 ind_1 = 0
-        if res == False and j != i:
+        if res is False and j != i:
             return False
         else:
             j = 0
