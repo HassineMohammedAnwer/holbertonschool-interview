@@ -9,10 +9,11 @@
  * @number: declaration
  * Return: code
  */
-listint_t *insert_node(listint_t **head, int number) {
-
+listint_t *insert_node(listint_t **head, int number)
+	{
 	/* pointers for listint */
 	listint_t *current, *prev;
+
 	current = prev = *head;
 
 	/* Allocate memory */
@@ -23,21 +24,24 @@ listint_t *insert_node(listint_t **head, int number) {
 	new_node->n = number;
 
 	/*  make the new node the head if the linkedlist not empty */
-	if (!(*head)) {
+	if (!(*head))
+	{
 		new_node->next = NULL;
 		*head = new_node;
 		return (new_node);
 	}
 
 	/* make it the new head if the condistion is right */
-	if ((*head)->n >= new_node->n) {
+	if ((*head)->n >= new_node->n)
+	{
 		new_node->next = *head;
 		*head = new_node;
 		return (new_node);
 	}
 
 	/* Traverse the linked list */
-	while (current && current->n < number) {
+	while (current && current->n < number)
+	{
 		prev = current;
 		current = current->next;
 	}
