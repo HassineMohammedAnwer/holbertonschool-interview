@@ -9,7 +9,7 @@
  * @number: declaration
  * Return: code
  */
-listint_t *insert_node(listint_t **head, int number){
+listint_t *insert_node(listint_t **head, int number) {
 
 	/* pointers for listint */
 	listint_t *current, *prev;
