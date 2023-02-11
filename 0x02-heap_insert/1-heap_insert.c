@@ -87,7 +87,7 @@ void swap_nodes(binary_tree_t **child, binary_tree_t **parent)
 
 
 /**
- * heap_insert : a function that inserts a value into a Max Binary Heap
+ * *heap_insert - a function that inserts a value into a Max Binary Heap
  * @root: double pointer to the root node of the Heap
  * @value: value to store in the node to be inserted
  * Return:  a pointer to the inserted node, or NULL on failure
