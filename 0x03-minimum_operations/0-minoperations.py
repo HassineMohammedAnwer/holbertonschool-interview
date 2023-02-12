@@ -1,4 +1,11 @@
+#!/usr/bin/python3
+"""
+Minimum Operations
+"""
+
+
 def minOperations(n):
+    """fewest number of operations needed to result in exactly n characters"""
     if n <= 0:
         return 0
 
@@ -12,4 +19,3 @@ def minOperations(n):
     operations += n
 
     return int(operations - 1)
-
