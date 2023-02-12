@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include "sandpiles.h"
 
 static void my_print_grid(int grid[3][3])
@@ -11,31 +10,13 @@ static void my_print_grid(int grid[3][3])
 		for (j = 0; j < 3; j++)
 		{
 			if (j)
-			{
-				printf(" ");
-			}
+			printf(" ");
 			printf("%d", grid[i][j]);
 		}
 	printf("\n");
 	}
 }
-bool my_check_grid(int grid[3][3])
-{
-	int i, j;
 
-        for (i = 1; i < 3; i++)
-        {
-                for (j = 1; j < 3; j++)
-                {
-			if (j)
-			{
-				if (grid[i][j] != grid[i][j - 1])
-					return (false);
-			}
-		}
-	}
-	return (true);
-}
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
 	int i, j, toppling = 1;
@@ -48,11 +29,8 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 			grid1[i][j] += grid2[i][j];
 		}
 	}
-	if (my_check_grid(grid1) == false)
-	{
-		printf("=\n");
-		my_print_grid(grid1);
-	}
+	printf("=\n");
+	my_print_grid(grid1);
 	while (toppling)
 	{
 		toppling = 0;
