@@ -6,6 +6,7 @@ static void my_print_grid(int grid[3][3])
 {
 	int i, j;
 
+	printf("=\n");
 	for (i = 0; i < 3; i++)
 	{
 		for (j = 0; j < 3; j++)
@@ -38,21 +39,15 @@ bool my_check_grid(int grid[3][3])
 }
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
-	int i, j, toppling = 1;
-	int temp[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+	int i, j, toppling = 1, temp[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
 
 	for (i = 0; i < 3; i++)
 	{
 		for (j = 0; j < 3; j++)
-		{
 			grid1[i][j] += grid2[i][j];
-		}
 	}
 	if (my_check_grid(grid1) == false)
-	{
-		printf("=\n");
 		my_print_grid(grid1);
-	}
 	while (toppling)
 	{
 		toppling = 0;
@@ -76,10 +71,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 			}
 		}
 		if (toppling)
-		{
-			printf("=\n");
 			my_print_grid(grid1);
-		}
 		for (i = 0; i < 3; i++)
 		{
 			for (j = 0; j < 3; j++)
@@ -90,4 +82,3 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 		}
 	}
 }
-
