@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 import sys
 
 # Define a dictionary to store the number of lines by status code
