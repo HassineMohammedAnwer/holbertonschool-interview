@@ -45,15 +45,12 @@ int is_palindrome(listint_t **head)
 		prev_of_slow = slow;
 		slow = slow->next;
 	}
-
 	/* if odd number of nodes, skip the middle node */
 	if (fast)
 		slow = slow->next;
-
 	/* reverse the second half of the linked list */
 	second_half = reverse_list(&slow);
 	*head = *head;
-
 	/* compare first and second halves */
 	while (second_half)
 	{
@@ -65,12 +62,9 @@ int is_palindrome(listint_t **head)
 		(*head) = (*head)->next;
 		second_half = second_half->next;
 	}
-
 	/* reverse the second half again to restore the original linked list */
 	reverse_list(&slow);
-
 	/* adjust the head to the original first node */
 	*head = prev_of_slow;
-
 	return (result);
 }
