@@ -73,7 +73,6 @@ int main(void)
         {3, 3, 3}
     };
 
-
     print_grid_sum(grid1, grid2);
 
     sandpiles_sum(grid1, grid2);
