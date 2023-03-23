@@ -17,6 +17,7 @@ if n < 4:
 
 
 def is_valid(board, row, col):
+    """lkklgliygligy"""
     for r, c in board:
         if col == c or row + col == r + c or row - col == r - c:
             return False
@@ -24,6 +25,7 @@ def is_valid(board, row, col):
 
 
 def nqueens(n, board=[]):
+    """lygkuftjyrdj"""
     if len(board) == n:
         print([list(pos) for pos in board])
         return
