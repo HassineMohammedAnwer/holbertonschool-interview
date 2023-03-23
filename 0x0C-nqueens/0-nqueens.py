@@ -15,11 +15,13 @@ if n < 4:
     print("N must be at least 4")
     exit(1)
 
+
 def is_valid(board, row, col):
     for r, c in board:
         if col == c or row + col == r + c or row - col == r - c:
             return False
     return True
+
 
 def nqueens(n, board=[]):
     if len(board) == n:
@@ -31,5 +33,5 @@ def nqueens(n, board=[]):
             nqueens(n, board)
             board.pop()
 
-nqueens(n)
 
+nqueens(n)
