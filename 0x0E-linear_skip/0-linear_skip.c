@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "search.h"
 
+
 /**
  * search_range - searches for a value in a range of nodes
  * @p: start node of the range
@@ -18,6 +19,7 @@ skiplist_t *search_range(skiplist_t *p, skiplist_t *current, int n)
 	}
 	return (NULL);
 }
+
 
 /**
  * linear_skip - searches for a value in a sorted skip list of integers
