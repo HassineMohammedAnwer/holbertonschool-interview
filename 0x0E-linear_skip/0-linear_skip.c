@@ -9,18 +9,13 @@
  * @value: value to search for
  * Return: a pointer to the node containing the value, or NULL if not found
  */
-skiplist_t *search_range(skiplist_t *start, skiplist_t *stop, int value)
+skiplist_t *search_range(skiplist_t *p, skiplist_t *current, int n)
 {
-	skiplist_t *node = start;
-
-	while (node && node != stop->next)
+	for (; p != current->next; p = p->next)
 	{
-		printf("Value checked at index [%lu] = [%d]\n", node->index, node->n);
-		if (node->n == value)
-			return (node);
-		node = node->next;
+		if (p->n == n)
+			return (p);
 	}
-
 	return (NULL);
 }
 
@@ -32,28 +27,43 @@ skiplist_t *search_range(skiplist_t *start, skiplist_t *stop, int value)
  */
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-	skiplist_t *node = list, *jump;
+	skiplist_t *current = list, *p = list;
 
-	if (!list)
-		return (NULL);
-
-	while (node->express)
+	while (current)
 	{
-		jump = node->express;
-		printf("Value checked at index [%lu] = [%d]\n", jump->index, jump->n);
-		if (jump->n >= value)
+		if ((current->n < value || ((current->n == value) &&
+			!(search_range(p, current, value)))) && current->next)
 		{
-			printf("Value found between indexes [%lu] and [%lu]\n",
-			node->index, jump->index);
-			return (search_range(node, jump, value));
+			if (current->index)
+				printf("Value checked at index [%lu] = [%d]\n",
+					current->index, current->n);
+			p = current;
+			if (!current->express)
+			{
+				while (current->next)
+					current = current->next;
+			}
+			else
+				current = current->express;
 		}
-		node = jump;
+		else
+		{
+			if (p->n > value)
+				return (NULL);
+			if (current->n >= value)
+				printf("Value checked at index [%lu] = [%d]\n",
+					current->index, current->n);
+			printf("Value found between indexes [%lu] and [%lu]\n",
+				p->index, current->index);
+			for (; p && p != current->next; p = p->next)
+			{
+				printf("Value checked at index [%lu] = [%d]\n",
+					p->index, p->n);
+				if (p->n == value)
+					return (p);
+			}
+			return (NULL);
+		}
 	}
-
-	while (node->next)
-		node = node->next;
-
-	printf("Value found between indexes [%lu] and [%lu]\n",
-	node->index, node->index);
-	return (search_range(node, node, value));
+	return (NULL);
 }
