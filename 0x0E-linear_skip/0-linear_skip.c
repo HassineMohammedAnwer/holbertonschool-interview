@@ -4,9 +4,9 @@
 
 /**
  * search_range - searches for a value in a range of nodes
- * @start: start node of the range
- * @stop: end node of the range
- * @value: value to search for
+ * @p: start node of the range
+ * @current: end node of the range
+ * @n: value to search for
  * Return: a pointer to the node containing the value, or NULL if not found
  */
 skiplist_t *search_range(skiplist_t *p, skiplist_t *current, int n)
