@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <math.h>
 
+
 void chr_draw(int c, int r, char chr, int level);
 
 /**
  * menger - a 2D version of the Menger sponge
+ *
  * @level : size of cube
  */
 void menger(int level)
@@ -14,18 +16,18 @@ void menger(int level)
 	if (level < 0)
 		return;
 
-	for (int row = 0; row < size; row
+	for (int row = 0; row < size; row++)
 	{
 		for (int col = 0; col < size; col++)
 		{
 			chr_draw(col, row, '#', level);
 		}
-		printf("\n");
+		putchar('\n');
 	}
 }
 
 /**
- * chr_draw - Draws a character on a given position, based on the Menger level
+ * chr_draw - Draws
  * @c: column
  * @r: row
  * @chr: # or space
@@ -43,5 +45,5 @@ void chr_draw(int c, int r, char chr, int level)
 		r /= 3;
 		level = level - 1;
 	}
-	printf("%c", chr);
+	putchar(chr);
 }
