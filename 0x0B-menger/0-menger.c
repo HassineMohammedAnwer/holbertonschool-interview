@@ -2,7 +2,28 @@
 #include <math.h>
 
 
-void chr_draw(int c, int r, char chr, int level);
+/**
+ * chr_draw - Draws
+ * @c: column
+ * @r: row
+ * @chr: # or space
+ * @level: of the Menger Sponge
+ */
+void chr_draw(int c, int r, char chr, int level)
+{
+        while (level > 0)
+        {
+                if (c % 3 == 1 && r % 3 == 1)
+                {
+                        chr = ' ';
+                }
+                c /= 3;
+                r /= 3;
+                level = level - 1;
+        }
+        putchar(chr);
+}
+
 
 /**
  * menger - a 2D version of the Menger sponge
@@ -24,26 +45,4 @@ void menger(int level)
 		}
 		putchar('\n');
 	}
-}
-
-/**
- * chr_draw - Draws
- * @c: column
- * @r: row
- * @chr: # or space
- * @level: of the Menger Sponge
- */
-void chr_draw(int c, int r, char chr, int level)
-{
-	while (level > 0)
-	{
-		if (c % 3 == 1 && r % 3 == 1)
-		{
-			chr = ' ';
-		}
-		c /= 3;
-		r /= 3;
-		level = level - 1;
-	}
-	putchar(chr);
 }
