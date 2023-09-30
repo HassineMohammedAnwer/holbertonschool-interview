@@ -13,7 +13,7 @@ void menger(int level)
 {
 	int size = (int) pow(3, level);
 
-	if (level < 1)
+	if (level < 0)
 		return;
 
 	for (int row = 0; row < size; row++)
