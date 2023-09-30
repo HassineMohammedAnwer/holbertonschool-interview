@@ -11,17 +11,17 @@
  */
 void chr_draw(int c, int r, char chr, int level)
 {
-        while (level > 0)
-        {
-                if (c % 3 == 1 && r % 3 == 1)
-                {
-                        chr = ' ';
-                }
-                c /= 3;
-                r /= 3;
-                level = level - 1;
-        }
-        putchar(chr);
+	while (level > 0)
+	{
+		if (c % 3 == 1 && r % 3 == 1)
+		{
+			chr = ' ';
+		}
+		c /= 3;
+		r /= 3;
+		level = level - 1;
+	}
+	putchar(chr);
 }
 
 
