@@ -19,8 +19,8 @@ int advanced_binary(int *array, size_t size, int value)
 
 	printf("Searching in array: ");
 	for (index = 0; index < size; index++)
-		//prints each element of the array followed by a comma and a space
-		//except for the last element which is followed by a newline
+		/*prints each element of the array followed by a comma and a space*/
+		/*except for the last element which is followed by a newline*/
 		printf(index == size - 1 ? "%d\n" : "%d, ", array[index]);
 
 	if (size == 1 && array[0] != value)
