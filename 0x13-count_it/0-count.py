@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""recurively queries the Reddit API"""
-
+"""recurively
+queries the Reddit API"""
 import requests
 
 
 def count_words(subreddit, word_list, counts=None, after=None):
-    """prints a sorted count of given keywords"""
+    """prints a sorted count
+    of given keywords"""
     if counts is None:
         counts = {}
     word_list = [word.lower() for word in word_list]
