@@ -20,7 +20,6 @@ void mul(char *num1, char *num2)
 {
 	int len1 = 0, len2 = 0, i, j, carry = 0, sum;
 	int *result;
-
 	while (num1[len1])
 	{
 		if (!_isdigit(num1[len1]))
@@ -30,7 +29,6 @@ void mul(char *num1, char *num2)
 		}
 		len1++;
 	}
-
 	while (num2[len2])
 	{
 		if (!_isdigit(num2[len2]))
@@ -46,7 +44,6 @@ void mul(char *num1, char *num2)
 		printf("Error\n");
 		exit(98);
 	}
-
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		carry = 0;
@@ -58,7 +55,6 @@ void mul(char *num1, char *num2)
 		}
 		result[i] += carry;
 	}
-
 	i = 0;
 	while (i < len1 + len2 - 1 && result[i] == 0)
 		i++;
