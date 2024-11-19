@@ -24,26 +24,28 @@ void mul(char *num1, char *num2)
 	while (num1[len1])
 	{
 		if (!_isdigit(num1[len1]))
-        {
-            printf("Error\n");
-            exit(98);
-        }
+		{
+			printf("Error\n");
+			exit(98);
+		}
 		len1++;
 	}
 
 	while (num2[len2])
 	{
-		if (!_isdigit(num2[len2])) {
-            printf("Error\n");
-            exit(98);
-        }
+		if (!_isdigit(num2[len2]))
+		{
+			printf("Error\n");
+			exit(98);
+		}
 		len2++;
 	}
 	result = calloc(len1 + len2, sizeof(int));
-	if (result == NULL) {
-            printf("Error\n");
-            exit(98);
-        }
+	if (result == NULL)
+	{
+		printf("Error\n");
+		exit(98);
+	}
 
 	for (i = len1 - 1; i >= 0; i--)
 	{
@@ -75,10 +77,11 @@ void mul(char *num1, char *num2)
  */
 int main(int argc, char *argv[])
 {
-	if (argc != 3) {
-            printf("Error\n");
-            exit(98);
-        }
-    mul(argv[1], argv[2]);
+	if (argc != 3) 
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	mul(argv[1], argv[2]);
 	return (0);
 }
