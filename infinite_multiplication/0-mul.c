@@ -23,7 +23,8 @@ void mul(char *num1, char *num2)
 
 	while (num1[len1])
 	{
-		if (!_isdigit(num1[len1])) {
+		if (!_isdigit(num1[len1]))
+        {
             printf("Error\n");
             exit(98);
         }
