@@ -71,12 +71,8 @@ void radix_sort(int *array, size_t size)
     int max = get_max(array, size);
     int exp;
 
-    if (size == 1)
-    {
-        printf (1);
-        exit (1);
-    }
-
+    if (array == NULL || size < 2)
+		return;
     for (exp = 1; max / exp > 0; exp *= 10)
     {
         counting_sort(array, size, exp);
