@@ -9,11 +9,11 @@ def pascal_triangle(n):
     You can assume n will be always an integer"""
     if n <= 0:
         return []
-    l = [[1]]
+    ll = [[1]]
     for i in range(1, n):
         row = [1]
         for j in range(1, i):
-            row.append(l[i-1][j-1] + l[i-1][j])
+            row.append(ll[i-1][j-1] + ll[i-1][j])
         row.append(1)
-        l.append(row)
-    return l
+        ll.append(row)
+    return ll
