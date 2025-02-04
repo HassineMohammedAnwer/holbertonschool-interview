@@ -25,7 +25,6 @@ typedef struct binary_tree_s binary_tree_t;
 typedef struct binary_tree_s avl_t;
 
 /* FUNCTION PROTOTYPES */
-static int print_t(const binary_tree_t *tree, int offset, int depth, char **s);
 void binary_tree_print(const binary_tree_t *tree);
 int binary_tree_is_avl(const binary_tree_t *tree);
 
