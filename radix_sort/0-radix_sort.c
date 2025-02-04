@@ -73,7 +73,7 @@ void radix_sort(int *array, size_t size)
 
     if (size == 1)
     {
-        print (1);
+        printf (1);
         exit (1);
     }
 
