@@ -128,8 +128,8 @@ int binary_tree_is_avl(const binary_tree_t *tree)
     if (!is_bst(tree, INT_MIN, INT_MAX))
         return 0;
 
-    size_t left_height = binary_tree_height(tree->left);
-    size_t right_height = binary_tree_height(tree->right);
+    size_t left_height = _height(tree->left);
+    size_t right_height = _height(tree->right);
 
     if (abs((int)(left_height - right_height)) > 1)
         return 0;
