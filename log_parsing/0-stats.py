@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""lkjml"""
-
+"""
+lkjml
+"""
 import sys
 
 
@@ -12,12 +13,10 @@ def print_metrics(metrics, file_size):
         if status_codes[codes[code]] > 0:
             print("{}: {}".format(codes[code], status_codes[codes[code]]))
 
-
 # zedze
 file_size = 0
 line_count = 0
 status_codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
-
 
 # zdczdùm
 try:
