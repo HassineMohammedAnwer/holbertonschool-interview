@@ -23,7 +23,7 @@ try:
                 line_count += 1
         except:
             pass
-        
+
         if line_count == 10:
             print_stats(total_size, status_codes)
             line_count = 0
@@ -31,4 +31,3 @@ try:
     print_stats(total_size, status_codes)
 except KeyboardInterrupt:
     print_stats(total_size, status_codes)
-
