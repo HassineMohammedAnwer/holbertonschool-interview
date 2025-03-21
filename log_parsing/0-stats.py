@@ -1,6 +1,6 @@
 #!/usr/bin/python3
+"""lkjml"""
 import sys
-"""ijmlj"""
 
 
 def print_stats(total_size, status_codes):
