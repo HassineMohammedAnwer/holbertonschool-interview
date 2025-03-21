@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 import sys
+"""ijmlj"""
+
 
 def print_stats(total_size, status_codes):
+    """dlijrfij"""
     print("File size: {}".format(total_size))
     for code in sorted(status_codes.keys()):
         if status_codes[code] > 0:
