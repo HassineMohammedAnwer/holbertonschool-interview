@@ -4,33 +4,35 @@ import sys
 
 
 def print_stats(total_size, status_codes):
-    """dlijrfij"""
-    print("File size: {}".format(total_size))
-    for code in sorted(status_codes.keys()):
-        if status_codes[code] > 0:
-            print("{}: {}".format(code, status_codes[code]))
+    """dlijrfzdcij"""
+    codes = [200, 301, 400, 401, 403, 404, 405, 500]
+    print("File size: {}" .format(file_size))
+    for code in range(len(codes)):
+        if status_codes[codes[code]] > 0:
+            print("{}: {}".format(codes[code], status_codes[codes[code]]))
 
-total_size = 0
-status_codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+
+# zedze
+file_size = 0
 line_count = 0
+status_codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
 
+
+# zdczdùm
 try:
     for line in sys.stdin:
         try:
-            split_line = line.split()
-            file_size = int(split_line[-1])
-            status_code = int(split_line[-2])
-            if status_code in status_codes:
-                status_codes[status_code] += 1
-                total_size += file_size
-                line_count += 1
-        except:
-            pass
-
-        if line_count == 10:
-            print_stats(total_size, status_codes)
-            line_count = 0
-
-    print_stats(total_size, status_codes)
-except KeyboardInterrupt:
-    print_stats(total_size, status_codes)
+            line_count += 1
+            arguments = line.split
+            file_size = int(arguments[-1])
+            http_code = int(arguments[-2])
+            status_codes[http_code] += 1
+            if line_count == 10:
+                print_metrics(status_codes, file_size)
+                line_count = 0
+        except Exception:
+            continue
+except Exception:
+    pass
+finally:
+    print_metrics(status_codes, file_size)
