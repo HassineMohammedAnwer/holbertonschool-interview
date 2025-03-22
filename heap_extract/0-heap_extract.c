@@ -29,9 +29,10 @@ static heap_t *get_last_node(heap_t *root)
 	}
 	return (last);
 }
- 
+
 /**
-  * heapify_down - rebuilds the Max Heap by moving a node down to its correct position.
+  * heapify_down - rebuilds the Max Heap by moving
+  * a node down to its correct position.
   * @root: pointer to root node of the heap.
   */
 static void heapify_down(heap_t *root)
@@ -58,7 +59,7 @@ static void heapify_down(heap_t *root)
 			break;
 	}
 }
- 
+
 /**
  * heap_extract - extracts the root node of a Max Binary Heap
  * @root: double pointer to the root of the heap
