@@ -48,7 +48,7 @@
 			 largest = root->right;
 		 if (largest != root)
 		 {
-			 int tmp = root->n;
+			 tmp = root->n;
 			 root->n = largest->n;
 			 largest->n = tmp;
 			 root = largest;
