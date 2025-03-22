@@ -36,7 +36,8 @@
   */
  static void heapify_down(heap_t *root)
  {
-	 heap_t *largest, *tmp;
+	 heap_t *largest;
+	 int tmp;
  
 	 while (root)
 	 {
