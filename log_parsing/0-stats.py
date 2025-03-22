@@ -28,8 +28,9 @@ def main():
     finally:
         print("File size: {}".format(s))
         for key, value in sorted(STATUS.items()):
-                if value != 0:
-                    print("{}: {:d}".format(key, value))
+            if value != 0:
+                print("{}: {:d}".format(key, value))
+
 
 if __name__ == "__main__":
     main()
