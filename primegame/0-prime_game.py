@@ -4,7 +4,7 @@
 
 def isWinner(x, nums):
     """dmk,"""
-    if x == 0:
+    if x <= 0:
         return None
     n = 10000
     is_prime = [True] * (n + 1)
